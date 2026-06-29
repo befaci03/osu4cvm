@@ -33,7 +33,8 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                         deleteBeatmapsButton.Enabled.Value = false;
                         Task.Run(() => beatmaps.Delete()).ContinueWith(_ => Schedule(() => deleteBeatmapsButton.Enabled.Value = true));
                     }, DeleteConfirmationContentStrings.Beatmaps));
-                }
+                },
+                Enabled = { Value = false }
             });
 
             Add(deleteBeatmapVideosButton = new DangerousSettingsButtonV2
@@ -59,7 +60,8 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                         resetOffsetsButton.Enabled.Value = false;
                         Task.Run(beatmaps.ResetAllOffsets).ContinueWith(_ => Schedule(() => resetOffsetsButton.Enabled.Value = true));
                     }, DeleteConfirmationContentStrings.Offsets));
-                }
+                },
+                Enabled = { Value = false }
             });
 
             AddRange(new Drawable[]

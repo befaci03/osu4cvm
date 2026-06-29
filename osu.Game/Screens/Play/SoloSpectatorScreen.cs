@@ -100,7 +100,7 @@ namespace osu.Game.Screens.Play
                         {
                             new OsuSpriteText
                             {
-                                Text = SoloSpectatorScreenStrings.SpectatorMode,
+                                Text = "Spectator Mode",
                                 Font = OsuFont.Default.With(size: 30),
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
@@ -145,7 +145,7 @@ namespace osu.Game.Screens.Play
                             },
                             watchButton = new PurpleRoundedButton
                             {
-                                Text = SoloSpectatorScreenStrings.StartWatching,
+                                Text = "Start Watching",
                                 Width = 250,
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,

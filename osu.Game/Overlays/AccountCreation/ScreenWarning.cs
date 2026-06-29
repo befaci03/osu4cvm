@@ -4,7 +4,6 @@
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
-using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.Textures;
 using osu.Framework.Screens;
 using osu.Game.Graphics;
@@ -52,7 +51,7 @@ namespace osu.Game.Overlays.AccountCreation
 
             InternalChildren = new Drawable[]
             {
-                new Sprite
+                /*new Sprite
                 {
                     Anchor = Anchor.TopCentre,
                     Origin = Anchor.TopCentre,
@@ -63,7 +62,7 @@ namespace osu.Game.Overlays.AccountCreation
                     Anchor = Anchor.BottomCentre,
                     Origin = Anchor.BottomCentre,
                     Texture = textures.Get(@"Menu/dev-build-footer"),
-                },
+                },*/
                 new FillFlowContainer
                 {
                     RelativeSizeAxes = Axes.Both,
@@ -107,7 +106,8 @@ namespace osu.Game.Overlays.AccountCreation
                         new DangerousSettingsButton
                         {
                             Text = AccountCreationStrings.MultiAccountWarningAccept,
-                            Action = () => this.Push(new ScreenEntry())
+                            Action = () => this.Push(new ScreenEntry()),
+                            Enabled = { Value = false }
                         },
                         furtherAssistance = new LinkFlowContainer(cp => cp.Font = cp.Font.With(size: 12))
                         {

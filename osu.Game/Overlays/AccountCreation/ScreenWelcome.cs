@@ -59,7 +59,8 @@ namespace osu.Game.Overlays.AccountCreation
                     {
                         Text = AccountCreationStrings.LetsCreateAnAccount,
                         Margin = new MarginPadding { Vertical = 120 },
-                        Action = () => this.Push(new ScreenWarning())
+                        Action = () => this.Push(new ScreenWarning()),
+                        Enabled = { Value = false }
                     }
                 }
             };

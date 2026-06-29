@@ -48,7 +48,6 @@ namespace osu.Game.Skinning
             Configuration.ConfigDictionary[nameof(SkinConfiguration.LegacySetting.AllowSliderBallTint)] = @"true";
 
             Configuration.LegacyVersion = 2.7m;
-            Configuration.IsLatestVersion = true;
         }
     }
 }

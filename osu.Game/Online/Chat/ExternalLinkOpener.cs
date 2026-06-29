@@ -107,12 +107,14 @@ namespace osu.Game.Online.Chat
                     new PopupDialogOkButton
                     {
                         Text = DialogStrings.ExternalLinkOkButton,
-                        Action = openExternalLinkAction
+                        Action = openExternalLinkAction,
+                        Enabled = { Value = false }
                     },
                     new PopupDialogCancelButton
                     {
                         Text = CommonStrings.CopyLink,
-                        Action = copyExternalLinkAction
+                        Action = copyExternalLinkAction,
+                        Enabled = { Value = false }
                     },
                     new PopupDialogCancelButton
                     {

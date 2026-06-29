@@ -42,6 +42,7 @@ namespace osu.Game.Overlays.Settings.Sections.General
                     Keywords = new[] { @"first run", @"initial", @"getting started", @"import", @"tutorial", @"recommended beatmaps" },
                     TooltipText = FirstRunSetupOverlayStrings.FirstRunSetupDescription,
                     Action = () => firstRunSetupOverlay?.Show(),
+                    Enabled = { Value = false }
                 },
                 new SettingsButtonV2
                 {
@@ -55,7 +56,7 @@ namespace osu.Game.Overlays.Settings.Sections.General
                     Text = GeneralSettingsStrings.ReportIssue,
                     TooltipText = GeneralSettingsStrings.ReportIssueTooltip,
                     BackgroundColour = colours.YellowDarker,
-                    Action = () => game?.OpenUrlExternally(@"https://osu.ppy.sh/community/forums/topics/create?forum_id=5", LinkWarnMode.NeverWarn)
+                    Action = () => game?.OpenUrlExternally(@"https://osu.ppy.sh/community/forums/topics/create?forum_id=5", LinkWarnMode.AlwaysWarn)
                 },
             });
 
@@ -65,6 +66,7 @@ namespace osu.Game.Overlays.Settings.Sections.General
                 BackgroundColour = colours.YellowDarker.Darken(0.5f),
                 Keywords = new[] { @"bug", "report", "logs", "files" },
                 Action = () => Task.Run(exportLogs),
+                Enabled = { Value = false }
             });
 
             exportStorage = (storage as OsuStorage)?.GetExportStorage() ?? storage.GetStorageForDirectory(@"exports");

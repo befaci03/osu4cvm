@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Allocation;
+using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Localisation;
 using osu.Game.Configuration;
@@ -22,12 +23,12 @@ namespace osu.Game.Overlays.Settings.Sections.Online
                 new SettingsItemV2(new FormCheckBox
                 {
                     Caption = OnlineSettingsStrings.ExternalLinkWarning,
-                    Current = config.GetBindable<bool>(OsuSetting.ExternalLinkWarning)
+                    Current = new Bindable<bool>(true) { Disabled = true },
                 }),
                 new SettingsItemV2(new FormCheckBox
                 {
                     Caption = OnlineSettingsStrings.PreferNoVideo,
-                    Current = config.GetBindable<bool>(OsuSetting.PreferNoVideo)
+                    Current = new Bindable<bool>(true) { Disabled = true },
                 })
                 {
                     Keywords = new[] { "no-video" },
@@ -43,7 +44,7 @@ namespace osu.Game.Overlays.Settings.Sections.Online
                 new SettingsItemV2(new FormCheckBox
                 {
                     Caption = OnlineSettingsStrings.ShowExplicitContent,
-                    Current = config.GetBindable<bool>(OsuSetting.ShowOnlineExplicitContent),
+                    Current = new Bindable<bool>(false) { Disabled = true },
                 })
                 {
                     Keywords = new[] { "nsfw", "18+", "offensive" },

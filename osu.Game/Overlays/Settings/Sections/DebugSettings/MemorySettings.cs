@@ -3,12 +3,7 @@
 
 using System;
 using System.Runtime;
-using System.Threading;
-using System.Threading.Tasks;
 using osu.Framework.Allocation;
-using osu.Framework.Development;
-using osu.Framework.Extensions.ObjectExtensions;
-using osu.Framework.Graphics;
 using osu.Framework.Localisation;
 using osu.Framework.Logging;
 using osu.Framework.Platform;
@@ -62,7 +57,7 @@ namespace osu.Game.Overlays.Settings.Sections.DebugSettings
                 }
             });
 
-            if (DebugUtils.IsDebugBuild)
+            /*if (DebugUtils.IsDebugBuild)
             {
                 AddRange(new Drawable[]
                 {
@@ -126,7 +121,7 @@ namespace osu.Game.Overlays.Settings.Sections.DebugSettings
                         Logger.Error(e, @"Blocking realm failed");
                     }
                 };
-            }
+            }*/
         }
 
         private enum GCLatencyMode

@@ -39,6 +39,7 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                         else
                             performer?.PerformFromScreen(menu => menu.Push(new FileImportScreen()));
                     },
+                    Enabled = { Value = false }
                 },
                 new SettingsButtonV2
                 {

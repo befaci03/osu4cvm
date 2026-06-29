@@ -49,9 +49,10 @@ namespace osu.Game.Graphics.UserInterfaceV2
             RelativeSizeAxes = Axes.X;
             AutoSizeAxes = Axes.Y;
 
+            FormControlBackground bg = new FormControlBackground();
             InternalChildren = new Drawable[]
             {
-                background = new FormControlBackground(),
+                background = bg,
                 new Container
                 {
                     RelativeSizeAxes = Axes.X,
@@ -114,7 +115,7 @@ namespace osu.Game.Graphics.UserInterfaceV2
 
         protected override bool OnClick(ClickEvent e)
         {
-            switchButton.TriggerClick();
+            if (!Current.Disabled) switchButton.TriggerClick();
             return true;
         }
 

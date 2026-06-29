@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Allocation;
+using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Localisation;
 using osu.Game.Configuration;
@@ -22,7 +23,7 @@ namespace osu.Game.Overlays.Settings.Sections.Online
                 new SettingsItemV2(new FormEnumDropdown<DiscordRichPresenceMode>
                 {
                     Caption = OnlineSettingsStrings.DiscordRichPresence,
-                    Current = config.GetBindable<DiscordRichPresenceMode>(OsuSetting.DiscordRichPresence)
+                    Current = new Bindable<DiscordRichPresenceMode>(DiscordRichPresenceMode.Off) { Disabled = true },
                 }),
             };
         }

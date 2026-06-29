@@ -25,6 +25,7 @@ namespace osu.Game.Overlays.Settings.Sections
         [BackgroundDependencyLoader]
         private void load(UpdateManager? updateManager)
         {
+            Add(new WarningSettings());
             Add(new QuickActionSettings());
             Add(new LanguageSettings());
             if (updateManager?.CanCheckForUpdate == true)

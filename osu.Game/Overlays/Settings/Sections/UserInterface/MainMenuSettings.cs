@@ -48,11 +48,11 @@ namespace osu.Game.Overlays.Settings.Sections.UserInterface
                 })
                 {
                     Keywords = new[] { "intro", "welcome" },
-                },
+                },/*
                 new SettingsItemV2(new FormEnumDropdown<IntroSequence>
                 {
                     Caption = UserInterfaceStrings.IntroSequence,
-                    Current = config.GetBindable<IntroSequence>(OsuSetting.IntroSequence),
+                    Current = new Bindable<IntroSequence>(IntroSequence.Welcome),
                 }),
                 new SettingsItemV2(new FormEnumDropdown<BackgroundSource>
                 {
@@ -66,7 +66,7 @@ namespace osu.Game.Overlays.Settings.Sections.UserInterface
                 {
                     Caption = UserInterfaceStrings.SeasonalBackgrounds,
                     Current = config.GetBindable<SeasonalBackgroundMode>(OsuSetting.SeasonalBackgroundMode),
-                })
+                })*/
             };
         }
 

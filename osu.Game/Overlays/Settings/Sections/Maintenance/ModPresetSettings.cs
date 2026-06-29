@@ -43,12 +43,14 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                             deleteAllButton.Enabled.Value = false;
                             Task.Run(deleteAllModPresets).ContinueWith(t => Schedule(onAllModPresetsDeleted, t));
                         }, DeleteConfirmationContentStrings.ModPresets));
-                    }
+                    },
+                    Enabled = { Value = false }
                 },
                 undeleteButton = new SettingsButtonV2
                 {
                     Text = MaintenanceSettingsStrings.RestoreAllRecentlyDeletedModPresets,
-                    Action = () => Task.Run(undeleteModPresets).ContinueWith(t => Schedule(onModPresetsUndeleted, t))
+                    Action = () => Task.Run(undeleteModPresets).ContinueWith(t => Schedule(onModPresetsUndeleted, t)),
+                    Enabled = { Value = false }
                 }
             });
         }

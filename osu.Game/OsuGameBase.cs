@@ -77,11 +77,7 @@ namespace osu.Game
     [Cached(typeof(OsuGameBase))]
     public partial class OsuGameBase : Framework.Game, ICanAcceptFiles, IBeatSyncProvider
     {
-#if DEBUG
-        public const string GAME_NAME = "osu! (development)";
-#else
-        public const string GAME_NAME = "osu!";
-#endif
+        public const string GAME_NAME = "osu!VM";
 
         public const string OSU_PROTOCOL = "osu://";
 
@@ -120,25 +116,7 @@ namespace osu.Game
 
         public bool IsDeployedBuild => AssemblyVersion.Major > 0;
 
-        public virtual string Version
-        {
-            get
-            {
-                if (!IsDeployedBuild)
-                    return @"local " + (DebugUtils.IsDebugBuild ? @"debug" : @"release");
-
-                string informationalVersion = Assembly.GetEntryAssembly()?
-                    .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
-                    .InformationalVersion;
-
-                // Example: [assembly: AssemblyInformationalVersion("2025.613.0-tachyon+d934e574b2539e8787956c3c9ecce9dadebb10ee")]
-                if (!string.IsNullOrEmpty(informationalVersion))
-                    return informationalVersion.Split('+').First();
-
-                Version version = AssemblyVersion;
-                return $@"{version.Major}.{version.Minor}.{version.Build}-lazer";
-            }
-        }
+        public string Version = "0.0.1-vm";
 
         /// <summary>
         /// The <see cref="Edges"/> that the game should be drawn over at a top level.

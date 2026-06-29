@@ -49,27 +49,8 @@ namespace osu.Game.Input
             if (frameworkConfineMode.Disabled)
                 return;
 
-            // override confine mode only when clicking outside the window minimises it.
-            if (frameworkWindowMode.Value == WindowMode.Fullscreen && frameworkMinimiseOnFocusLossInFullscreen.Value)
-            {
-                frameworkConfineMode.Value = ConfineMouseMode.Fullscreen;
-                return;
-            }
-
-            switch (osuConfineMode.Value)
-            {
-                case OsuConfineMouseMode.Never:
-                    frameworkConfineMode.Value = ConfineMouseMode.Never;
-                    break;
-
-                case OsuConfineMouseMode.DuringGameplay:
-                    frameworkConfineMode.Value = localUserPlaying.Value == LocalUserPlayingState.Playing ? ConfineMouseMode.Always : ConfineMouseMode.Never;
-                    break;
-
-                case OsuConfineMouseMode.Always:
-                    frameworkConfineMode.Value = ConfineMouseMode.Always;
-                    break;
-            }
+            // To isolate the cursor, can be useful in borderless mode
+            frameworkConfineMode.Value = ConfineMouseMode.Always;
         }
     }
 }

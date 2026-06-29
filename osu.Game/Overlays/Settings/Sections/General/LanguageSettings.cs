@@ -20,12 +20,12 @@ namespace osu.Game.Overlays.Settings.Sections.General
         {
             Children = new Drawable[]
             {
-                new SettingsItemV2(new FormEnumDropdown<Language>
+                /*new SettingsItemV2(new FormEnumDropdown<Language>
                 {
                     Caption = GeneralSettingsStrings.LanguageDropdown,
                     Current = game.CurrentLanguage,
                     AlwaysShowSearchBar = true,
-                }),
+                }),*/
                 new SettingsItemV2(new FormCheckBox
                 {
                     Caption = GeneralSettingsStrings.PreferOriginalMetadataLanguage,

@@ -123,7 +123,7 @@ namespace osu.Game.Overlays.AccountCreation
                                     {
                                         Text = LoginPanelStrings.Register,
                                         Margin = new MarginPadding { Vertical = 20 },
-                                        Action = performRegistration
+                                        Action = null
                                     }
                                 }
                             }

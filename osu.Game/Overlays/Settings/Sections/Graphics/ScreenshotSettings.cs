@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Allocation;
+using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Localisation;
 using osu.Game.Configuration;
@@ -22,12 +23,12 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
                 new SettingsItemV2(new FormEnumDropdown<ScreenshotFormat>
                 {
                     Caption = GraphicsSettingsStrings.ScreenshotFormat,
-                    Current = config.GetBindable<ScreenshotFormat>(OsuSetting.ScreenshotFormat)
+                    Current = new Bindable<ScreenshotFormat>(ScreenshotFormat.Jpg) { Disabled = true },
                 }),
                 new SettingsItemV2(new FormCheckBox
                 {
                     Caption = GraphicsSettingsStrings.ShowCursorInScreenshots,
-                    Current = config.GetBindable<bool>(OsuSetting.ScreenshotCaptureMenuCursor)
+                    Current = new Bindable<bool>(false) { Disabled = true },
                 })
             };
         }
