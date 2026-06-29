@@ -158,7 +158,7 @@ namespace osu.Game.Tests.Visual
 
             // if we don't apply these changes, when running under nUnit the version that gets populated is that of nUnit.
             public override Version AssemblyVersion => new Version(0, 0);
-            public override string Version => "test game";
+            public string Version => "test game";
 
             protected override Loader CreateLoader() => new TestLoader();
 
