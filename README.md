@@ -4,11 +4,10 @@
 
 # osu!
 
-[![Build status](https://github.com/ppy/osu/actions/workflows/ci.yml/badge.svg?branch=master&event=push)](https://github.com/ppy/osu/actions/workflows/ci.yml)
-[![GitHub release](https://img.shields.io/github/release/ppy/osu.svg)](https://github.com/ppy/osu/releases/latest)
-[![CodeFactor](https://www.codefactor.io/repository/github/ppy/osu/badge)](https://www.codefactor.io/repository/github/ppy/osu)
-[![dev chat](https://discordapp.com/api/guilds/188630481301012481/widget.png?style=shield)](https://discord.gg/ppy)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/osu-web/localized.svg)](https://crowdin.com/project/osu-web)
+[![Build status](https://github.com/befaci03/osu4cvm/actions/workflows/ci.yml/badge.svg?branch=master&event=push)](https://github.com/befaci03/osu4cvm/actions/workflows/ci.yml)
+[![GitHub release](https://img.shields.io/github/release/befaci03/osu4cvm.svg)](https://github.com/befaci03/osu4cvm/releases/latest)
+[![CodeFactor](https://www.codefactor.io/repository/github/befaci03/osu4cvm/badge)](https://www.codefactor.io/repository/github/befaci03/osu4cvm)
+<!-- [![dev chat](https://discordapp.com/api/guilds/188630481301012481/widget.png?style=shield)](https://discord.gg/ppy) -->
 
 A free-to-win rhythm game. Rhythm is just a *click* away!
 
@@ -18,26 +17,18 @@ This is the future – and final – iteration of the [osu!](https://osu.ppy.sh)
 
 This project is under constant development, but we do our best to keep things in a stable state. Players are encouraged to install from a release alongside their stable *osu!* client. This project will continue to evolve until we eventually reach the point where most users prefer it over the previous "osu!stable" release.
 
-A few resources are available as starting points to getting involved and understanding the project:
-
-- Detailed release changelogs are available on the [official osu! site](https://osu.ppy.sh/home/changelog/lazer).
-- You can learn more about our approach to [project management](https://github.com/ppy/osu/wiki/Project-management).
-- Track our current efforts [towards improving the game](https://github.com/orgs/ppy/projects/7/views/6).
-
 ## Running osu!
 
 If you are just looking to give the game a whirl, you can grab the latest release for your platform:
 
 ### Latest release:
 
-| [Windows 10+ (x64)](https://github.com/ppy/osu/releases/latest/download/install.exe) | macOS 12+ ([Intel](https://github.com/ppy/osu/releases/latest/download/osu.app.Intel.zip), [Apple Silicon](https://github.com/ppy/osu/releases/latest/download/osu.app.Apple.Silicon.zip)) | [Linux (x64)](https://github.com/ppy/osu/releases/latest/download/osu.AppImage) | [iOS 13.4+](https://osu.ppy.sh/home/testflight) | [Android 5+](https://github.com/ppy/osu/releases/latest/download/sh.ppy.osulazer.apk) |
-|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ------------- | ------------- | ------------- |
+| [Windows 10+ (x64)](https://github.com/befaci03/osu4cvm/releases/latest/download/install.exe) | [Linux (x64)](https://github.com/befaci03/osu4cvm/releases/latest/download/osu.AppImage) | [Android 5+](https://github.com/befaci03/osu4cvm/releases/latest/download/sh.ppy.osulazer.apk) |
+|--------------------------------------------------------------------------------------| ------------- | ------------- |
 
 You can also generally download a version for your current device from the [osu! site](https://osu.ppy.sh/home/download).
 
 If your platform is unsupported or not listed above, there is still a chance you can run the release or manually build it by following the instructions below.
-
-**For iOS/iPadOS users**: The iOS testflight link fills up very fast (Apple has a hard limit of 10,000 users). We reset it occasionally. Please do not ask about this. Check back regularly for link resets or follow [peppy](https://twitter.com/ppy) on twitter for announcements. Our goal is to get the game on mobile app stores very soon so we don't have to live with this limitation.
 
 ## Developing a custom ruleset
 
@@ -60,11 +51,11 @@ When working with the codebase, we recommend using an IDE with intelligent code 
 Clone the repository:
 
 ```shell
-git clone https://github.com/ppy/osu
+git clone https://github.com/befaci03/osu4cvm osu-for-collabvm
 cd osu
 ```
 
-To update the source code to the latest commit, run the following command inside the `osu` directory:
+To update the source code to the latest commit, run the following command inside the `osu-for-collabvm` directory:
 
 ```shell
 git pull
@@ -78,7 +69,7 @@ You should load the solution via one of the platform-specific `.slnf` files, rat
 
 - `osu.Desktop.slnf` (most common)
 - `osu.Android.slnf`
-- `osu.iOS.slnf`
+- ~~`osu.iOS.slnf`~~
 
 Run configurations for the recommended IDEs (listed above) are included. You should use the provided Build/Run functionality of your IDE to get things going. When testing or building new components, it's highly encouraged you use the `osu! (Tests)` project/configuration. More information on this is provided [below](#contributing).
 
